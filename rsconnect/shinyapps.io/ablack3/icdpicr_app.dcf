@@ -1,0 +1,12 @@
+name: icdpicr_app
+title: icdpicr_app
+username:
+account: ablack3
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 230431
+bundleId: 1059077
+url: https://ablack3.shinyapps.io/icdpicr_app/
+when: 1509817160.18303
+asMultiple: FALSE
+asStatic: FALSE
