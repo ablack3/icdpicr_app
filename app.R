@@ -8,14 +8,9 @@ library(icdpicr)
 
 # options(shiny.reactlog=T) # command f3 + right arrow
 
-# source("./icdpicr/R/helper functions.R")
-# source("./icdpicr/R/trauma.R")
-# source("./icdpicr/R/altcharl.R")
-source("./text.R")
-
+source("./text_html.R")
 source("./uploadModule.R")
 source("./downloadModule.R")
-source("./altcharlModule.R")
 source("./traumaModule.R")
 
 
@@ -81,13 +76,13 @@ server <- function(input, output, session) {
     output$input_table <- renderDataTable({ datafile()})
 
     output_table <- reactive({
-        print(input$modules)
+        # print(input$modules) # for debugging
         d <- datafile()
         if(input$modules == "trauma") d <- trauma_out()
         d
     })
   
-    observe({print(output_table())})
+    # observe({print(output_table())}) #for debugging
     callModule(downloadModule, "download", output_table)
   
     # outputs 
